@@ -13,8 +13,7 @@ class SearchProblem(ABC):
     def get_start_state(self):
         """
         return start state
-        type can be tuple, string,
-        类型可以是 tuple、string、custom class，depends on how questions are built
+        type can be tuple、string、custom class，depends on how questions are built
         """
         pass
 
@@ -22,8 +21,7 @@ class SearchProblem(ABC):
     def get_goal_state(self):
         """
         return goal state
-        type can be tuple, string,
-        类型可以是 tuple、string、custom class，depends on how questions are built
+        type can be tuple、string、custom class，depends on how questions are built
         """
         pass
 
