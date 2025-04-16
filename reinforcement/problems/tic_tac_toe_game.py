@@ -1,6 +1,5 @@
 from copy import deepcopy
-from search.algorithms.adversarial.minimax import minimax_decision
-from search.algorithms.adversarial.alphabeta import alphabeta_decision
+from reinforcement.algorithms.mcts import mcts_decision
 
 class TicTacToeGame:
     def __init__(self, state=None):
@@ -91,10 +90,7 @@ class TicTacToeGame:
     def initial_state(self):
         return deepcopy(self.state)
 
-if __name__ == "__main__":
-    game = TicTacToeGame()
-    state = game.initial_state()
-
+'''def run_tic_tac_toe_game(state, action, game):
     # state[1][1] = 'X' # make X to start first
     # step = 1
 
@@ -103,7 +99,7 @@ if __name__ == "__main__":
         game.display(state)
         print("Current player:", game.get_player(state))
 
-        action = alphabeta_decision(state, game)
+        action = mcts_decision(state, game)
         print("AI chooses:", action)
 
         # Apply action to generate new state
@@ -120,6 +116,4 @@ if __name__ == "__main__":
     if winner:
         print("Winner:", winner)
     else:
-        print("Draw!")
-
-
+        print("Draw!")'''
