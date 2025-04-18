@@ -1,7 +1,7 @@
 from reinforcement.algorithms.mdp_solver import solve_mdp
 from reinforcement.visualize.policy_heatmap import plot_policy_and_values
 
-def visualize_q_learning(grid, rewards, start_state, goal_states, transition_probs, env):
+def visualize_policy_iteration(grid, rewards, start_state, goal_states, transition_probs, env):
     # visualize
     import numpy as np
     def render_policy_and_values(grid, state_values, policy):
@@ -29,11 +29,11 @@ def visualize_q_learning(grid, rewards, start_state, goal_states, transition_pro
                 row_display += f"{cell:<8}"
             print(row_display)
 
-    result = solve_mdp(env, method='q_learning', gamma=0.9, alpha=0.1, epsilon=0.1, episodes=500)
+    result = solve_mdp(env, method='policy_iteration', gamma=0.9, theta=1e-5)
     policy = result['policy']
     state_values = result['state_values']
 
     render_policy_and_values(grid, state_values, policy)
-    plot_policy_and_values(grid, policy, state_values, title="Q Learning Result")
+    plot_policy_and_values(grid, policy, state_values, title="Policy Iteration Result")
 
 
