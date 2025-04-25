@@ -10,3 +10,6 @@ result = enumeration_ask(query, evidence, bayes_net)
 
 print(f"P({query}=True | evidence) = {result[True]:.4f}")
 print(f"P({query}=False | evidence) = {result[False]:.4f}")
+
+from probabilistic.visualize.bayes_graph_plot import plot_bayes_network
+plot_bayes_network(bayes_net)

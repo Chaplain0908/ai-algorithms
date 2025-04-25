@@ -5,11 +5,12 @@ given a HMM model and observation, inference prob of hidden state in each time p
 # P(Xt | e1:t)
 # Xt: hidden state in time t, is Rainy or Sunny
 # et: observation in time t, is Umbrella or NoUmbrella
-# target: alphat(x) = P(Xt=x | e1:t)
+# target: alpha_t(hidden) = P(hidden_t | observations)
 
 def forward_algorithm(hmm, observations):
     '''
-
+    calculate alpha_t(hidden_t) = P(hidden_t|observations)
+                      = P(observation_t|hidden_t)*sigma(alpha_t-1(hidden_t-1)*P(hidden_t|hidden_t-1))
     :param hmm: hmm models
     :param observations: ['Umbrella', 'Umbrella', 'NoUmbrella', 'Umbrella']
     :return: List[Dict[state, probability]]
@@ -24,7 +25,7 @@ def forward_algorithm(hmm, observations):
     first_obs = observations[0]
 
     # initialize
-    # alpha1(x) = P(X1=x | e1) = P(e1 | X1=x)*P(X1=x) / P(e1)
+    # alpha_t(hidden_t) = P(hidden_t | observations)*P(hidden_t)/P(observations)
     alpha = {}
     for state in states:
         prior = start_prob[state]
@@ -39,16 +40,16 @@ def forward_algorithm(hmm, observations):
 
     for t in range(1, len(observations)):
         obs = observations[t]
-        prev_alpha = filtered_probs[-1]  # α_{t-1}
+        prev_alpha = filtered_probs[-1]  # alpha_{t-1}
         new_alpha = {}
 
         for curr_state in states:
-            # Prediction: sum over all prev_state of α_{t-1}(prev_state) * P(curr_state | prev_state)
+            # Prediction: sum over all prev_state of alpha_{t-1}(hidden_t-1) * P(hidden_t | hidden_t-1)
             predicted = 0.0
             for prev_state in states:
                 predicted += prev_alpha[prev_state] * trans_prob[prev_state][curr_state]
 
-            # Update with emission probability: α_t(curr_state) = P(e_t | curr_state) * predicted
+            # Update with emission probability: alpha_t(hidden_t) = P(obs_t | hidden_t) * predicted
             likelihood = emission_prob[curr_state][obs]
             new_alpha[curr_state] = likelihood * predicted
 
