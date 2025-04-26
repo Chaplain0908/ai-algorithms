@@ -306,12 +306,12 @@ Thus, no counterexample exists, and the property holds universally.
 
 - Evaluation:  
   A valid knowledge base should satisfy the following:
-  - If$A$is true, then$B$must be true.
-  - If$B$is true, then$C$must be true.
-  -$A \lor D$means at least one of$A$or$D$must be true.
-  - If$C$is true, then$D$must be false.
-  - If$D$is true, then$E$must be true.
-  -$E$must be false.
+  - If $A$ is true, then $B$ must be true.
+  - If $B$ is true, then $C$ must be true.
+  - $A \lor D$ means at least one of $A$ or $D$ must be true.
+  - If $C$ is true, then $D$ must be false.
+  - If $D$ is true, then $E$ must be true.
+  - $E$ must be false.
 
 - Required Inference:  
   - From the given clauses, infer the truth value of each variable.
