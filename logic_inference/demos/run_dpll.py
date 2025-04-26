@@ -9,8 +9,8 @@ from logic_inference.problems.kb_rules import kb_rules
 from logic_inference.problems.kb_wumpus import kb_wumpus
 from logic_inference.visualize.sat_tree_plot import plot_dpll_decision_tree
 
-clauses = kb_rules()
-# clauses = kb_wumpus()
+#clauses = kb_rules()
+clauses = kb_wumpus()
 
 result = dpll(clauses)
 
