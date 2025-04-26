@@ -113,6 +113,7 @@ if __name__ == "__main__":
                 break
 
         # step += 1
+        print("\n")
 
     print("\nFinal State:")
     game.display(state)
