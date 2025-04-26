@@ -8,19 +8,24 @@ Before diving into the algorithms, it is important to understand some essential 
 
 # Logic Inference Subsections
 
+- [Logic Inference](#logic-inference)
+- [Logic Inference Subsections](#logic-inference-subsections)
 - [Knowledge Background](#knowledge-background)
-  - [Analysis of Compound Statement](#statement-operations)
+  - [Analysis of Compound Statement](#analysis-of-compound-statement)
+    - [Target:](#target)
     - [Statement Operations](#statement-operations)
     - [Other Statements](#other-statements)
   - [Conditional](#conditional)
+    - [Target](#target-1)
     - [Implication](#implication)
-    - [Bi-conditional](#bi-conditional)
+    - [bi-conditional](#bi-conditional)
   - [Inference Rules](#inference-rules)
     - [Inference](#inference)
     - [Modus Ponens](#modus-ponens)
     - [Contrapositive (Modus Tollens)](#contrapositive-modus-tollens)
     - [Rules of Inference](#rules-of-inference)
     - [First-Order Logic](#first-order-logic)
+      - [Relationship between Universal and Existential Quantifiers](#relationship-between-universal-and-existential-quantifiers)
   - [Proof Techniques](#proof-techniques)
     - [Logical Equivalence](#logical-equivalence)
     - [Direct Proof](#direct-proof)
@@ -33,13 +38,13 @@ Before diving into the algorithms, it is important to understand some essential 
 - [Problems](#problems)
   - [kb-wumpus](#kb-wumpus)
   - [kb-rules](#kb-rules)
-- [Algorithms](#algorithm)
+- [Algorithm](#algorithm)
   - [DPLL-SAT](#dpll-sat)
-  - [Resolution Proof](#resolution-resolution-proof)
+  - [Resolution Proof](#resolution-proof)
 - [Results](#results)
   - [DPLL](#dpll)
-    - [kb_wumpus](#kb_wumpus)
-    - [kb_rules](#kb-rules)
+    - [kb\_wumpus](#kb_wumpus)
+    - [kb\_rules](#kb_rules)
   - [Resolution](#resolution)
 
 # Knowledge Background
@@ -217,7 +222,7 @@ $$n^2 = (2a+1)^2 = 4a^2 + 4a + 1 = 2(2a^2 + 2a) + 1$$
 This expression is odd, not even — contradiction!
 
 Thus, the original statement must be true:  
-> If $ n $ is odd, then $ n^2 $ is odd.
+> If $n$ is odd, then $n^2$ is odd.
 
 ### Proof by Example
 
@@ -301,12 +306,12 @@ Thus, no counterexample exists, and the property holds universally.
 
 - Evaluation:  
   A valid knowledge base should satisfy the following:
-  - If \( A \) is true, then \( B \) must be true.
-  - If \( B \) is true, then \( C \) must be true.
-  - \( A \lor D \) means at least one of \( A \) or \( D \) must be true.
-  - If \( C \) is true, then \( D \) must be false.
-  - If \( D \) is true, then \( E \) must be true.
-  - \( E \) must be false.
+  - If $ A $ is true, then $ B $ must be true.
+  - If $ B $ is true, then $ C $ must be true.
+  - $ A \lor D $ means at least one of $ A $ or $ D $ must be true.
+  - If $ C $ is true, then $ D $ must be false.
+  - If $ D $ is true, then $ E $ must be true.
+  - $ E $ must be false.
 
 - Required Inference:  
   - From the given clauses, infer the truth value of each variable.
