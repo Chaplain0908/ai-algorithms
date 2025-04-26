@@ -54,31 +54,31 @@ Before diving into the algorithms, it is important to understand some essential 
 - Understand the structure of a statement.
 - Learn how to determine whether a statement is True or False based on its structure.
 
-Now, suppose we are given a statement $P$, and we need to determine whether $P$ is True or False.
-We approach this by breaking down $P$ into smaller component statements that together form $P$.
+Now, suppose we are given a statement$P$, and we need to determine whether$P$is True or False.
+We approach this by breaking down$P$into smaller component statements that together form$P$.
 
-Assume we have statements $Q$, $A$ and $B$, where:
-- $Q$ may be related to $P$ through negation,
-- $A$ and $B$ are components (sub-statements) of $P$.
+Assume we have statements$Q$,$A$and$B$, where:
+-$Q$may be related to$P$through negation,
+-$A$and$B$are components (sub-statements) of$P$.
 
 ### Statement Operations
 In order to combine these component statements and analyze their truth values, we use a set of basic operations:
 
 | Operation         | Symbol                                         | Definition                  | Truth Condition |
 |:------------------|:----------------------------------------------:|:-----------------------------|:----------------|
-| Negation          | $P = \neg Q$                                   | NOT $Q$                     | $P$ is True if $Q$ is False; False if $Q$ is True |
-| Conjunction (AND) | $P = A \land B$                                | $A$ AND $B$                 | $P$ is True only if both $A$ and $B$ are True |
-| Disjunction (OR)  | $P = A \lor B$                                 | $A$ OR $B$                  | $P$ is True if at least one of $A$ or $B$ is True |
-| Exclusive OR (XOR)| $P = (A \land \neg B) \lor (\neg A \land B)$   | $A$ XOR $B$                 | $P$ is True if $A$ and $B$ have different truth values |
-| Biconditional (IFF)| $P = (A \land B) \lor (\neg A \land \neg B)$  | $A$ iff $B$                 | $P$ is True if $A$ and $B$ have the same truth value |
-| Implication       | $P = \neg A \lor B$                            | If $A$ then $B$             | $P$ is False only when $A$ is True and $B$ is False |
+| Negation          |$P = \neg Q$                                  | NOT$Q$                    |$P$is True if$Q$is False; False if$Q$is True |
+| Conjunction (AND) |$P = A \land B$                               |$A$AND$B$                |$P$is True only if both$A$and$B$are True |
+| Disjunction (OR)  |$P = A \lor B$                                |$A$OR$B$                 |$P$is True if at least one of$A$or$B$is True |
+| Exclusive OR (XOR)|$P = (A \land \neg B) \lor (\neg A \land B)$  |$A$XOR$B$                |$P$is True if$A$and$B$have different truth values |
+| Biconditional (IFF)|$P = (A \land B) \lor (\neg A \land \neg B)$ |$A$iff$B$                |$P$is True if$A$and$B$have the same truth value |
+| Implication       |$P = \neg A \lor B$                           | If$A$then$B$            |$P$is False only when$A$is True and$B$is False |
 
 ### Other Statements
 And we also have some interesting statements:
 - Tautologies: Are true for any truth value of their sub-statements.
-  - Symbol: $A \lor \neg A$
+  - Symbol:$A \lor \neg A$
 - Unsatisfiable: Are true for any truth value of their sub-statements.
-  - Symbol: $A \land \neg A$
+  - Symbol:$A \land \neg A$
 
 ## Conditional
 
@@ -86,15 +86,15 @@ And we also have some interesting statements:
 - Understand and use the structure of *if-then* statements (Implications).
 
 ### Implication
-Now, suppose we have a statement $ P $ and its sub-statements $ A $ and $ B $.  
+Now, suppose we have a statement$P$and its sub-statements$A$and$B$.  
 The implication operator is expressed as:
 $$P = A \implies B$$
-which means that if the Hypothesis $ A $ is true, then the Conclusion $ B $ must also be true.
-To prove that $A \implies B$ is true, we often use *Tautologies* by constructing the contrapositive:
+which means that if the Hypothesis$A$is true, then the Conclusion$B$must also be true.
+To prove that$A \implies B$is true, we often use *Tautologies* by constructing the contrapositive:
 $$A \implies B \Leftrightarrow \neg B \implies \neg A$$
 
 ### bi-conditional
-The implication $ A \implies B$ is a **one-way** condition.  
+The implication$A \implies B$is a **one-way** condition.  
 There also exists a **bi-conditional** relationship, expressed as:
 $$A \Leftrightarrow B$$
 which means **"A if and only if B"**.
@@ -112,11 +112,11 @@ Based on these, we can infer the truth value of related statements by applying v
 ### Modus Ponens
 
 **Initial Premise:**  
-- $( P \implies Q )$ is True.  
-- $( P )$ is True.  
+-$( P \implies Q )$is True.  
+-$( P )$is True.  
 
 **Conclusion:**  
-- $Q$ must be True.
+-$Q$must be True.
 
 It can be expressed using a *Tautology*:
 $$[(P \implies Q) \land P] \implies Q$$
@@ -124,11 +124,11 @@ $$[(P \implies Q) \land P] \implies Q$$
 ### Contrapositive (Modus Tollens)
 
 **Initial Premise:**  
-- $( P \implies Q )$ is True.  
-- $( \neg Q )$ is True.
+-$( P \implies Q )$is True.  
+-$( \neg Q )$is True.
 
 **Conclusion:**  
-- $( \neg P )$ must be True.
+-$( \neg P )$must be True.
 
 It can be expressed using a *Tautology*:
 $$[(P \implies Q) \land \neg Q] \implies \neg P$$
@@ -141,10 +141,10 @@ Here are some commonly used rules:
 
 | Rule Name | Logical Form | Explanation                                                                                  |
 |:----------|:-------------|:---------------------------------------------------------------------------------------------|
-| Conjunction Simplification | $ (P \land Q) \implies P $ | If $( P \land Q )$ is True, then $P$ is True.                                                |
-| Disjunctive Syllogism | $ (P \lor Q) \land \neg Q \implies P $ | If $( P \lor Q )$ is True and $( Q )$ is False, then $P$ must be True.                       |
-| Bi-conditional Inference | $ (P \Leftrightarrow Q) \land Q \implies P $ | If $( P )$ and $( Q )$ are logically equivalent, and $( Q )$ is True, then $P$ must be True. |
-| Resolution Inference Rule | $ (P \lor Q) \land (\neg P \lor R) \implies (Q \lor R) $ | Combines two clauses to eliminate $( P )$ and infer $( Q \lor R)$.                           |
+| Conjunction Simplification |$(P \land Q) \implies P$| If$( P \land Q )$is True, then$P$is True.                                                |
+| Disjunctive Syllogism |$(P \lor Q) \land \neg Q \implies P$| If$( P \lor Q )$is True and$( Q )$is False, then$P$must be True.                       |
+| Bi-conditional Inference |$(P \Leftrightarrow Q) \land Q \implies P$| If$( P )$and$( Q )$are logically equivalent, and$( Q )$is True, then$P$must be True. |
+| Resolution Inference Rule |$(P \lor Q) \land (\neg P \lor R) \implies (Q \lor R)$| Combines two clauses to eliminate$( P )$and infer$( Q \lor R)$.                           |
 
 ### First-Order Logic
 
@@ -153,12 +153,12 @@ First-Order Logic extends Propositional Logic by allowing statements about objec
 We introduce two important types of quantification:
 
 - **Universal Quantification**:
-  The statement "for all $x$ in the domain, $P(x)$$ holds" is written as:
-  $$\forall x : P(x)$$
+  The statement "for all$x$in the domain,$P(x)$$holds" is written as:
+ $$\forall x : P(x)$$
 
 - **Existential Quantification**:
-  The statement "there exists an $x$ in the domain such that $P(x)$ holds" is written as:
-  $$\exists x : P(x)$$
+  The statement "there exists an$x$in the domain such that$P(x)$holds" is written as:
+ $$\exists x : P(x)$$
 
 #### Relationship between Universal and Existential Quantifiers
 
@@ -175,7 +175,7 @@ This means:
 
 ### Logical Equivalence
 
-When dealing with a compound statement $ P $, it is often helpful to simplify or expand it into a logically equivalent form.
+When dealing with a compound statement$P$, it is often helpful to simplify or expand it into a logically equivalent form.
 
 For example:
 $$P = (A \lor \neg B) \land (\neg A \lor B) \land A$$
@@ -189,30 +189,30 @@ Simplifying a statement can make it much easier to verify or prove its truth.
 In direct proof, we assume the known facts and proceed by a sequence of logical deductions to arrive at the desired conclusion.
 
 Example:  
-If a number $ n $ is even, then $ n = 2k $ for some integer $ k $.  
+If a number$n$is even, then$n = 2k$for some integer$k$.  
 Thus:
 $$n^2 = (2k)^2 = 4k^2 = 2(2k^2)$$
 
-Since $ 2k^2 $ is an integer, $ n^2 $ is also even.
+Since$2k^2$is an integer,$n^2$is also even.
 
 ### Proof by Contrapositive
 
-Rather than proving $ A \implies B $ directly, we can prove its contrapositive:
+Rather than proving$A \implies B$directly, we can prove its contrapositive:
 
 $$\neg B \implies \neg A$$
 
 Since an implication and its contrapositive are logically equivalent, proving one proves the other.
 
 Example:  
-To prove "if $ n^2 $ is odd, then $ n $ is odd",  
-we instead prove "if $ n $ is even, then $ n^2 $ is even".
+To prove "if$n^2$is odd, then$n$is odd",  
+we instead prove "if$n$is even, then$n^2$is even".
 
 ### Proof by Contradiction
 
 In proof by contradiction, we assume that the negation of the statement we want to prove is true, and then show that this assumption leads to a logical contradiction.
 
 Example:  
-Suppose $ n $ is odd, but $ n^2 $ is even.  
+Suppose$n$is odd, but$n^2$is even.  
 Then:
 $$n = 2a + 1$$
 
@@ -222,14 +222,14 @@ $$n^2 = (2a+1)^2 = 4a^2 + 4a + 1 = 2(2a^2 + 2a) + 1$$
 This expression is odd, not even — contradiction!
 
 Thus, the original statement must be true:  
-> If $n$ is odd, then $n^2$ is odd.
+> If$n$is odd, then$n^2$is odd.
 
 ### Proof by Example
 
-When the claim is existential (i.e., of the form $ \exists x : P(x) $), we can prove it by finding a specific example that satisfies $ P(x) $.
+When the claim is existential (i.e., of the form$\exists x : P(x)$), we can prove it by finding a specific example that satisfies$P(x)$.
 
 Example:  
-The statement "there exists a positive integer $ n $ such that $ n^2 - n + 41 $ is not prime" can be proved by taking $ n = 41 $:
+The statement "there exists a positive integer$n$such that$n^2 - n + 41$is not prime" can be proved by taking$n = 41$:
 
 $$n^2 - n + 41 = 41^2 - 41 + 41 = 41^2$$
 
@@ -241,9 +241,9 @@ Thus, the existential claim is proved.
 Proof by induction is used to prove statements for all natural numbers.
 
 **Basic structure:**
-1. Prove the **base case(s)** $ P(0) $, $ P(1) $, ..., $ P(k-1) $.
+1. Prove the **base case(s)**$P(0)$,$P(1)$, ...,$P(k-1)$.
 2. Prove the **inductive step**:  
-   Assume $ P(n-1), P(n-2), \dots, P(n-k) $ are true, and show that $ P(n) $ must also be true.
+   Assume$P(n-1), P(n-2), \dots, P(n-k)$are true, and show that$P(n)$must also be true.
 
 Formal representation:
 
@@ -254,9 +254,9 @@ Proving bounds for Fibonacci numbers using double-step induction.
 
 ### Strong Induction
 
-In **strong induction**, when proving $ P(n) $, we assume $ P(m) $ holds for **all** $ m < n $, not just the immediate predecessors.
+In **strong induction**, when proving$P(n)$, we assume$P(m)$holds for **all**$m < n$, not just the immediate predecessors.
 
-This method is necessary when $ P(n) $ depends on multiple prior cases in a nontrivial way.
+This method is necessary when$P(n)$depends on multiple prior cases in a nontrivial way.
 
 Formal structure:
 
@@ -264,13 +264,13 @@ $$[P(0) \land (\forall n \geq 1 : (P(0) \land P(1) \land \dots \land P(n-1)) \im
 
 ### Proof by Minimal Counterexample
 
-To prove that a property $ P(n) $ holds for all $ n \geq 2 $, assume the contrary:  
-Suppose there exists a smallest counterexample $ n' $.
+To prove that a property$P(n)$holds for all$n \geq 2$, assume the contrary:  
+Suppose there exists a smallest counterexample$n'$.
 
-- If $ n' $ is prime, then the property holds trivially.
-- If $ n' $ is composite, say $ n' = a \times b $, where $ a, b < n' $,  
-  then by minimality of $ n' $, $ P(a) $ and $ P(b) $ must be true.  
-  This leads to $ P(n') $ also being true, contradicting $ n' $ being a counterexample.
+- If$n'$is prime, then the property holds trivially.
+- If$n'$is composite, say$n' = a \times b$, where$a, b < n'$,  
+  then by minimality of$n'$,$P(a)$and$P(b)$must be true.  
+  This leads to$P(n')$also being true, contradicting$n'$being a counterexample.
 
 Thus, no counterexample exists, and the property holds universally.
 
@@ -306,12 +306,12 @@ Thus, no counterexample exists, and the property holds universally.
 
 - Evaluation:  
   A valid knowledge base should satisfy the following:
-  - If $ A $ is true, then $ B $ must be true.
-  - If $ B $ is true, then $ C $ must be true.
-  - $ A \lor D $ means at least one of $ A $ or $ D $ must be true.
-  - If $ C $ is true, then $ D $ must be false.
-  - If $ D $ is true, then $ E $ must be true.
-  - $ E $ must be false.
+  - If$A$is true, then$B$must be true.
+  - If$B$is true, then$C$must be true.
+  -$A \lor D$means at least one of$A$or$D$must be true.
+  - If$C$is true, then$D$must be false.
+  - If$D$is true, then$E$must be true.
+  -$E$must be false.
 
 - Required Inference:  
   - From the given clauses, infer the truth value of each variable.
@@ -334,8 +334,8 @@ Thus, no counterexample exists, and the property holds universally.
 
 - Idea:
   - The DPLL algorithm improves on basic backtracking search by introducing:
-    - **Unit Propagation**: Assign variables that must take a certain value because they appear in unit clauses (If $A$ appear in unite clause, it is True).
-    - **Pure Literal Elimination**: Assign variables that always appear with the same polarity ($A$ but not $\neg A$ in CNF).
+    - **Unit Propagation**: Assign variables that must take a certain value because they appear in unit clauses (If$A$appear in unite clause, it is True).
+    - **Pure Literal Elimination**: Assign variables that always appear with the same polarity ($A$but not$\neg A$in CNF).
     - **Variable Selection**: Choose an unassigned variable and recursively attempt assignments.
 
 - Algorithm Step :
