@@ -167,12 +167,12 @@ In this part, we mainly focus on search algorithms, and I separate them into two
 #### Grid World Problem
 <table>
     <tr>
-        <td><img src="https://raw.githubusercontent.com/Chaplain0908/ai-algorithms/main/details/visualize_result/search/grid_world_problem/BFS.png" alt="BFS" style="width:100%"></td>
-        <td><img src="https://raw.githubusercontent.com/Chaplain0908/ai-algorithms/main/details/visualize_result/search/grid_world_problem/DFS.png" alt="DFS" style="width:100%"></td>
+        <td><img src="https://raw.githubusercontent.com/Chaplain0908/ai-algorithms/main/visualize_result/search/grid_world_problem/BFS.png" alt="BFS" style="width:100%"></td>
+        <td><img src="https://raw.githubusercontent.com/Chaplain0908/ai-algorithms/main/visualize_result/search/grid_world_problem/DFS.png" alt="DFS" style="width:100%"></td>
     </tr>
     <tr>
-        <td><img src="https://raw.githubusercontent.com/Chaplain0908/ai-algorithms/main/details/visualize_result/search/grid_world_problem/UCS.png" alt="UCS" style="width:100%"></td>
-        <td><img src="https://raw.githubusercontent.com/Chaplain0908/ai-algorithms/main/details/visualize_result/search/grid_world_problem/A_star.png" alt="A*" style="width:100%"></td>
+        <td><img src="https://raw.githubusercontent.com/Chaplain0908/ai-algorithms/main/visualize_result/search/grid_world_problem/UCS.png" alt="UCS" style="width:100%"></td>
+        <td><img src="https://raw.githubusercontent.com/Chaplain0908/ai-algorithms/main/visualize_result/search/grid_world_problem/A_star.png" alt="A*" style="width:100%"></td>
     </tr>
 </table>
 
