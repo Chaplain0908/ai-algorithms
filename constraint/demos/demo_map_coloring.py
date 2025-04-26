@@ -1,6 +1,6 @@
 from constraint.algorithms.csp_solver import backtracking_search
 from constraint.problems.map_coloring_solver import create_map_coloring_csp
-from constraint.visualize import draw_map_coloring_solution
+from constraint.visualize.visualize import draw_map_coloring_solution
 
 variables, domain, constraints = create_map_coloring_csp()
 solution = backtracking_search(variables, domain, constraints)

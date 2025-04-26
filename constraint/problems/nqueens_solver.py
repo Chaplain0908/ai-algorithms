@@ -1,4 +1,4 @@
-from constraint import csp_solver
+from constraint.algorithms import csp_solver
 
 def constraint_fn(value1, value2):
     x1, y1 = value1

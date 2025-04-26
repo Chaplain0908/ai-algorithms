@@ -10,8 +10,6 @@ without relying on external libraries for core logic
 The aim of this project is to build a self-contained educational framework that supports 
 and extends future research in AI planning, probabilistic reasoning, and neural learning.
 
----
-
 # Structure
 
 This project is composed of eight main modules:
@@ -27,7 +25,6 @@ Each module generally includes the following components:
 In this README, I will introduce every algorithm and problem included in the project, covering the background of each problem, 
 the goal of the corresponding algorithm, how the algorithm works, and the final results—often visualized to provide a clearer understanding of the solution process.
 
----
 
 # Parts
 
@@ -40,7 +37,6 @@ the goal of the corresponding algorithm, how the algorithm works, and the final 
 - [Machine Learning](details/machine_learning.md)
 - [Neural Networks](details/neural_networks.md)
 
----
 
 
 

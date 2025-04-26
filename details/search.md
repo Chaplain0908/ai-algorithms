@@ -195,6 +195,7 @@ Path length: 17
 Path:  ['Right', 'Right', 'Up', 'Up', 'Right', 'Down', 'Down', 'Left', 
        'Up', 'Right', 'Up', 'Left', 'Down', 'Left', 'Left', 'Down', 'Down']
 ```
+---
 
 ## Adversarial Search
 ### Problem (Adversarial)
